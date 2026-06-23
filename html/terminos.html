@@ -1,0 +1,323 @@
+terminus
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Términos y Condiciones — JNK Express</title>
+    <meta name="description"
+        content="Términos y condiciones del servicio de encomiendas y transporte de carga de JNK Express.">
+
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ══════════════════════════════════════
+       ESTILOS ESPECÍFICOS DE PÁGINA LEGAL
+       Usa variables del design system de styles.css
+       ══════════════════════════════════════ -->
+    <style>
+        /* Contenedor principal de la página legal */
+        .legal-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--color-navy-deep);
+        }
+
+        /* Navbar simplificado para páginas legales */
+        .legal-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--navbar-height);
+            background-color: rgba(6, 24, 64, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Línea decorativa superior */
+        .legal-nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-red), var(--color-navy-base), transparent);
+        }
+
+        .legal-nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-3);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .legal-nav__back {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            transition: color var(--transition-fast);
+        }
+
+        .legal-nav__back:hover {
+            color: var(--color-white);
+        }
+
+        /* Contenido principal */
+        .legal-main {
+            flex: 1;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: var(--space-16) var(--space-3);
+            width: 100%;
+        }
+
+        /* Eyebrow "Legal" */
+        .legal-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-2);
+        }
+
+        .legal-eyebrow__line {
+            width: 36px;
+            height: 2px;
+            background-color: var(--color-red);
+            flex-shrink: 0;
+        }
+
+        .legal-eyebrow__text {
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            color: var(--color-red);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        /* Título de la página */
+        .legal-title {
+            font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            color: var(--color-white);
+            margin-bottom: var(--space-2);
+        }
+
+        /* Fecha de actualización */
+        .legal-date {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-8);
+        }
+
+        /* Card de advertencia/nota */
+        .legal-note {
+            background: rgba(229, 57, 53, 0.08);
+            border: 1px solid rgba(229, 57, 53, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-3) var(--space-4);
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: var(--space-8);
+        }
+
+        .legal-note strong {
+            color: var(--color-white);
+        }
+
+        /* Secciones de contenido */
+        .legal-sections {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+        }
+
+        .legal-section__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-2);
+            letter-spacing: -0.02em;
+        }
+
+        .legal-section__text {
+            font-size: var(--font-size-base);
+            color: var(--color-text-body);
+            line-height: 1.8;
+        }
+
+        .legal-section__text a {
+            color: var(--color-red);
+            font-weight: 600;
+            transition: opacity var(--transition-fast);
+        }
+
+        .legal-section__text a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Divisor entre secciones */
+        .legal-section {
+            padding-bottom: var(--space-8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .legal-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* Footer de la página legal */
+        .legal-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: var(--space-6) var(--space-3);
+            text-align: center;
+        }
+
+        .legal-footer__text {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-muted);
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="legal-page">
+
+        <nav class="legal-nav" role="navigation" aria-label="Navegación página legal">
+            <div class="legal-nav__inner">
+
+                <a href="index.html" class="navbar__logo" aria-label="JNK Express — Ir al inicio">
+                    <img src="./images/logos/jnk-logo.svg" alt="JNK Express" class="navbar__logo-img">
+                </a>
+
+                <a href="index.html" class="legal-nav__back" aria-label="Volver al inicio de JNK Express">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    Volver al inicio
+                </a>
+
+            </div>
+        </nav>
+
+        <main class="legal-main">
+            <div class="legal-eyebrow" aria-hidden="true">
+                <span class="legal-eyebrow__line"></span>
+                <span class="legal-eyebrow__text">Legal</span>
+            </div>
+
+            <!-- Título -->
+            <h1 class="legal-title">Términos y Condiciones</h1>
+            <p class="legal-date">Última actualización: 2026</p>
+
+            <!-- Secciones -->
+            <div class="legal-sections">
+
+                <section class="legal-section" aria-labelledby="term-1">
+                    <h2 id="term-1" class="legal-section__title">1. Servicio</h2>
+                    <p class="legal-section__text">
+                        JNK Express ofrece servicios de encomiendas, transporte de carga y entregas programadas entre el
+                        Gran Área
+                        Metropolitana (GAM) y la Zona Norte de Costa Rica, con sedes en San José (Barrio México) y Río
+                        Frío
+                        (Sarapiquí).
+                    </p>
+                </section>
+
+                <section class="legal-section" aria-labelledby="term-2">
+                    <h2 id="term-2" class="legal-section__title">2. Cotizaciones y tarifas</h2>
+                    <p class="legal-section__text">
+                        Las tarifas mostradas en la calculadora del sitio son estimaciones referenciales basadas en el
+                        peso real o
+                        el peso volumétrico del paquete, el que sea mayor. El monto final será confirmado por nuestro
+                        equipo antes
+                        de procesar el envío.
+                    </p>
+                </section>
+
+                <section class="legal-section" aria-labelledby="term-3">
+                    <h2 id="term-3" class="legal-section__title">3. Responsabilidad sobre el contenido del envío</h2>
+                    <p class="legal-section__text">
+                        El cliente es responsable de declarar correctamente el contenido, peso y dimensiones de su
+                        paquete. JNK
+                        Express se reserva el derecho de rechazar encomiendas con contenido prohibido, peligroso o no
+                        declarado.
+                    </p>
+                </section>
+
+                <section class="legal-section" aria-labelledby="term-4">
+                    <h2 id="term-4" class="legal-section__title">4. Horarios de atención</h2>
+                    <p class="legal-section__text">
+                        Sede San José: lunes a viernes, 8:00 a.m. a 6:00 p.m., y sábados de 8:00 a.m. a 12:00 m.d. Sede
+                        Río Frío:
+                        lunes a viernes, 8:00 a.m. a 6:00 p.m., y sábados de 8:00 a.m. a 12:00 m.d.
+                    </p>
+                </section>
+
+                <section class="legal-section" aria-labelledby="term-5">
+                    <h2 id="term-5" class="legal-section__title">5. Entregas y tiempos</h2>
+                    <p class="legal-section__text">
+                        Los tiempos de entrega informados son estimados y pueden variar por condiciones de ruta, clima o
+                        disponibilidad de la zona de destino. Coordinaremos con usted cualquier cambio relevante en el
+                        tiempo de
+                        entrega.
+                    </p>
+                </section>
+
+                <section class="legal-section" aria-labelledby="term-6">
+                    <h2 id="term-6" class="legal-section__title">6. Modificaciones</h2>
+                    <p class="legal-section__text">
+                        JNK Express puede actualizar estos términos en cualquier momento. Los cambios serán publicados
+                        en esta misma
+                        página.
+                    </p>
+                </section>
+
+                <section class="legal-section" aria-labelledby="term-7">
+                    <h2 id="term-7" class="legal-section__title">7. Contacto</h2>
+                    <p class="legal-section__text">
+                        Para consultas sobre estos términos, escríbanos al WhatsApp
+                        <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                            aria-label="Contactar JNK Express por WhatsApp">8336-2762</a>.
+                    </p>
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="legal-footer" role="contentinfo">
+            <p class="legal-footer__text">© 2026 JNK Express — Costa Rica</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
