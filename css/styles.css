@@ -2995,3 +2995,13 @@ body.tema-claro .btn--outline {
     color: #1a1a1a;
     border-color: rgba(0, 0, 0, 0.3);
 }
+
+body.tema-claro .calc-resultado__precio {
+    color: #1a1a1a;
+}
+
+body.tema-claro .calc-resultado__label,
+body.tema-claro .calc-resultado__desglose,
+body.tema-claro .calc-resultado__disclaimer {
+    color: #333333;
+}
