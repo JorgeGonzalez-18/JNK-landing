@@ -263,6 +263,7 @@ function initializeCalculator() {
         calcForm.addEventListener('submit', function (event) {
             event.preventDefault();
             var costo = calculateShippingCost(
+                document.getElementById('calc-origen').value,
                 document.getElementById('calc-destino').value,
                 parseFloat(document.getElementById('calc-peso').value) || 0,
                 parseFloat(document.getElementById('calc-largo').value) || 0,
@@ -318,44 +319,24 @@ function initializeCalculator() {
  * @param {number} alto     - Alto del paquete en cm
  * @returns {number}        - Precio estimado en colones costarricenses
  */
-function calculateShippingCost(destino, pesoReal, largo, ancho, alto) {
+function calculateShippingCost(origen, destino, peso, largo, ancho, alto) {
+    // Precio base según origen
+    var precioBase = (origen === 'sanjose') ? 2000 : 1200;
 
-    // ───────────────────────────────────────────────────────────
-    // TARIFAS BASE POR DESTINO — EN COLONES COSTARRICENSES
-    // SIMULADAS para el prototipo — el cliente define las reales
-    // Para cambiarlas, modificar los valores de este objeto
-    // ───────────────────────────────────────────────────────────
-    var tarifasBase = {
-        'riofrio': 2500,
-        'laguaria': 2800,
-        'pital': 3200,
-        'aguaszarcas': 3000,
-        'venecia': 2900,
-        'riocuarto': 3500,
-        'lavirgen': 3800,
-        'sanmiguel': 2700
-    };
-
-    // Cargo adicional por cada kg facturable — SIMULADO
-    var cargoPorKg = 350;
-
-    // Paso 1: Calcular el peso volumétrico
-    // Fórmula estándar: (Largo × Ancho × Alto) ÷ 5000
+    // Peso volumétrico (fórmula estándar)
     var pesoVolumetrico = (largo * ancho * alto) / 5000;
 
-    // Paso 2: Determinar el peso facturable
-    // Se cobra el mayor entre el peso real y el volumétrico
-    var pesoFacturable = Math.max(pesoReal, pesoVolumetrico);
+    // Peso facturable — el mayor entre real y volumétrico
+    var pesoFacturable = Math.max(peso, pesoVolumetrico);
 
-    // Paso 3: Obtener la tarifa base del destino
-    // Si no se encuentra el destino, usar 3000 como tarifa por defecto
-    var tarifaBase = tarifasBase[destino] || 3000;
+    // Costo adicional por kg extra a partir de 6kg
+    var costoAdicional = 0;
+    if (pesoFacturable > 6) {
+        var kgExtra = pesoFacturable - 6;
+        costoAdicional = Math.ceil(kgExtra) * 500;
+    }
 
-    // Paso 4: Calcular el total
-    var total = tarifaBase + (pesoFacturable * cargoPorKg);
-
-    // Redondear al entero más cercano
-    return Math.round(total);
+    return precioBase + costoAdicional;
 }
 
 
