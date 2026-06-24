@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ══════════════════════════════════════
+       META TAGS — SEO Y RENDIMIENTO
+       ══════════════════════════════════════ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Primario -->
+    <title>JNK Express</title>
+    <meta name="description"
+        content="JNK Express: encomiendas rápidas y seguras entre el GAM y la Zona Norte de Costa Rica. Envíos a San José, Río Frío, Pital, Aguas Zarcas y más destinos.">
+    <meta name="keywords"
+        content="encomiendas Costa Rica, envíos GAM, envíos Zona Norte, transporte de paquetes, mensajería Costa Rica, encomiendas San Carlos, encomiendas Río Frío, logística Costa Rica, transporte empresarial">
+    <!-- cambiar con url netlify -->
+    <!-- <link rel="canonical" href="https://jnkexpress.cr/"> -->
+
+    <!-- Google Search Console Verification -->
+    <!-- REEMPLAZAR con el código de verificación de Search Console -->
+    <meta name="google-site-verification" content="REEMPLAZAR_CON_CODIGO_REAL">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="JNK Express – Encomiendas Costa Rica">
+    <meta property="og:description"
+        content="Conectamos el GAM con la Zona Norte. Encomiendas rápidas, seguras y confiables.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jnkexpress.cr/">
+    <meta property="og:image" content="https://jnkexpress.cr/assets/images/og-image.jpg">
+    <meta property="og:locale" content="es_CR">
+    <meta property="og:site_name" content="JNK Express">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JNK Express – Encomiendas Costa Rica">
+    <meta name="twitter:description" content="Conectamos el GAM con la Zona Norte. Encomiendas rápidas y confiables.">
+    <meta name="twitter:image" content="https://jnkexpress.cr/assets/images/og-image.jpg">
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JNK Express",
+    "description": "Empresa de logística y encomiendas en Costa Rica, conectando el GAM con la Zona Norte.",
+    "url": "https://jnkexpress.cr",
+    "telephone": "8336-2762",
+    "email": "info@jnkexpress.cr",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 12, Avenida 8",
+        "addressLocality": "San José",
+        "addressCountry": "CR"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "300 m este de la Plaza de Deportes",
+        "addressLocality": "Río Frío",
+        "addressRegion": "Alajuela",
+        "addressCountry": "CR"
+      }
+    ],
+    "openingHours": "Mo-Fr 08:00-18:00 Sa 08:00-12:00",
+    "sameAs": [
+      "https://www.facebook.com/share/1AAkf3fwno/?mibextid=wwXIfr",
+      "https://www.instagram.com/transportes_jnk_express"
+    ]
+  }
+  </script>
+
+    <!-- ══════════════════════════════════════
+       FUENTES — INTER DE GOOGLE FONTS
+       ══════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ══════════════════════════════════════
+       TAILWIND CDN
+       ══════════════════════════════════════ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ══════════════════════════════════════
+       FONT AWESOME 6
+       ══════════════════════════════════════ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- ══════════════════════════════════════
+       ESTILOS PROPIOS
+       ══════════════════════════════════════ -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Analytics GA4 -->
+    <!-- REEMPLAZAR G-XXXXXXXXXX con el ID real del cliente en GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+
+
+
+<body>
+    <header id="navbar" class="navbar" role="banner">
+        <nav class="navbar__inner" aria-label="Navegación principal">
+
+            <!-- Logo -->
+            <a href="#inicio" class="navbar__logo" aria-label="JNK Express — Ir al inicio">
+                <img src="assets/logos/jnk-logo.svg" alt="JNK Express" class="navbar__logo-img">
+            </a>
+
+            <!-- Menú de navegación desktop -->
+            <ul class="navbar__links" role="list">
+                <li><a href="#inicio" class="navbar__link" aria-label="Ir a Inicio">Inicio</a></li>
+                <li><a href="#nosotros" class="navbar__link" aria-label="Ir a Nosotros">Nosotros</a></li>
+                <li><a href="#cobertura" class="navbar__link" aria-label="Ir a Cobertura">Cobertura</a></li>
+                <li><a href="#sedes" class="navbar__link" aria-label="Ir a Sedes">Sedes</a></li>
+                <li><a href="#calculadora" class="navbar__link" aria-label="Ir a Tarifas">Tarifas</a></li>
+                <li><a href="#contacto" class="navbar__link" aria-label="Ir a Contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Botones del Navbar -->
+            <div class="navbar__actions">
+                <a href="#contacto" class="btn btn--primary btn--sm" aria-label="Ir al formulario de contacto">
+                    Contacto
+                </a>
+                <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                    class="btn btn--whatsapp btn--sm" aria-label="Contactar JNK Express por WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- menu hamburguesa  -->
+            <button id="mobile-menu-btn" class="navbar__hamburger" aria-label="Abrir menú de navegación"
+                aria-expanded="false" aria-controls="mobile-menu">
+                <span class="hamburger__line" aria-hidden="true"></span>
+                <span class="hamburger__line" aria-hidden="true"></span>
+                <span class="hamburger__line" aria-hidden="true"></span>
+            </button>
+        </nav>
+
+        <!-- Menú mobil desplegable -->
+        <div id="mobile-menu" class="mobile-menu" aria-hidden="true" role="dialog"
+            aria-label="Menú de navegación móvil">
+            <ul class="mobile-menu__links" role="list">
+                <li><a href="#inicio" class="mobile-menu__link">Inicio</a></li>
+                <li><a href="#nosotros" class="mobile-menu__link">Nosotros</a></li>
+                <li><a href="#cobertura" class="mobile-menu__link">Cobertura</a></li>
+                <li><a href="#sedes" class="mobile-menu__link">Sedes</a></li>
+                <li><a href="#calculadora" class="mobile-menu__link">Tarifas</a></li>
+                <li><a href="#contacto" class="mobile-menu__link">Contacto</a></li>
+            </ul>
+            <div class="mobile-menu__actions">
+                <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                    class="btn btn--whatsapp btn--full" aria-label="Ir a WhatsApp de JNK Express">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- SECCIONES -->
+
+        <!-- HERO SECTION -->
+        <section id="inicio" class="hero" aria-label="Sección principal de JNK Express">
+
+            <canvas id="hero-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+
+            <!-- Imagen hero de fondo -->
+            <!-- REEMPLAZAR: foto real del cliente — camión JNK Express en ruta -->
+            <div class="hero__bg-image" role="img" aria-label="Camión JNK Express en ruta"></div>
+
+            <!-- degradado -->
+            <div class="hero__overlay" aria-hidden="true"></div>
+
+            <div class="hero__container hero__container--single">
+
+                <div class="hero__content reveal-fade-up">
+                    <p class="hero__eyebrow">
+                        <span class="eyebrow__dot" aria-hidden="true"></span>
+                        JNK EXPRESS
+                    </p>
+                    <h1 class="hero__title">
+                        Conectamos el <span class="hero__title--accent">GAM</span><br>
+                        con la <span class="hero__title--accent">Zona Norte</span>
+                    </h1>
+
+                    <p class="hero__subtitle">
+                        Encomiendas rápidas, seguras y confiables<br>
+                        para personas y empresas.
+                    </p>
+
+
+                    <div class="hero__actions">
+                        <a href="#calculadora" class="btn btn--primary btn--lg"
+                            aria-label="Ir a la calculadora de envíos">
+                            <i class="fas fa-calculator" aria-hidden="true"></i>
+                            Cotizá tu envío
+                        </a>
+                        <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                            class="btn btn--whatsapp btn--lg" aria-label="Enviar mensaje por WhatsApp a JNK Express">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            Enviar por WhatsApp
+                        </a>
+                    </div>
+                    <div class="hero__trust" aria-label="Indicadores de confianza">
+                        <span class="trust__badge">
+                            <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                            Envíos seguros
+                        </span>
+                        <span class="trust__badge">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            Entregas a tiempo
+                        </span>
+                        <span class="trust__badge">
+                            <i class="fas fa-user-check" aria-hidden="true"></i>
+                            Atención personalizada
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="servicios" aria-labelledby="servicios-titulo">
+            <div class="section-container">
+
+                <header class="section-header reveal-fade-up">
+                    <h2 id="servicios-titulo" class="section-title">Nuestros servicios</h2>
+                    <p class="section-subtitle">
+                        Soluciones de logística pensadas para el día a día de personas y empresas costarricenses.
+                    </p>
+                </header>
+
+                <div class="servicios__grid reveal-stagger">
+
+                    <article class="service-card">
+                        <div class="service-card__icon-wrap" aria-hidden="true">
+                            <i class="fas fa-box-open service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">Encomiendas</h3>
+                        <p class="service-card__desc">
+                            Transportamos tus paquetes de manera segura desde el GAM hacia la Zona Norte, con
+                            seguimiento
+                            personalizado.
+                        </p>
+                        <a href="#contacto" class="service-card__link"
+                            aria-label="Más información sobre el servicio de encomiendas">
+                            Más información <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon-wrap" aria-hidden="true">
+                            <i class="fas fa-calendar-check service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">Mudanzas</h3>
+                        <p class="service-card__desc">
+                            Transportamos tus pertenencias de manera segura desde el GAM hacia la Zona Norte, con
+                            seguimiento
+                            personalizado.
+                        </p>
+                        <a href="#contacto" class="service-card__link" aria-label="Más información sobre Mudanzas">
+                            Más información <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon-wrap" aria-hidden="true">
+                            <i class="fas fa-truck service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">Transporte de paquetes</h3>
+                        <p class="service-card__desc">
+                            Movemos tus paquetes con la máxima seguridad y eficiencia. Sin límite de tamaños especiales.
+                        </p>
+                        <a href="#contacto" class="service-card__link"
+                            aria-label="Más información sobre transporte de paquetes">
+                            Más información <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon-wrap" aria-hidden="true">
+                            <i class="fas fa-shield-halved service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">Logística confiable</h3>
+                        <p class="service-card__desc">
+                            Procesos optimizados para garantizar entregas rápidas y seguras. Tu paquete en las mejores
+                            manos.
+                        </p>
+                        <a href="#contacto" class="service-card__link"
+                            aria-label="Más información sobre logística confiable">
+                            Más información <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- NOSOTROS -->
+        <section id="nosotros" class="nosotros" aria-labelledby="nosotros-titulo">
+            <div class="section-container">
+
+                <div class="nosotros__grid">
+
+                    <figure class="nosotros__visual reveal-fade-left">
+                        <!-- REEMPLAZAR: foto del equipo o sede de JNK Express -->
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
+                            alt="Equipo de JNK Express — profesionales de logística en Costa Rica" loading="lazy"
+                            width="800" height="600" class="nosotros__image">
+                    </figure>
+
+                    <div class="nosotros__content reveal-fade-right">
+                        <p class="section-eyebrow">Quiénes somos</p>
+                        <h2 id="nosotros-titulo" class="section-title section-title--left">
+                            Una empresa familiar con<br>vocación de servicio
+                        </h2>
+                        <p class="nosotros__text">
+                            JNK Express nació de la necesidad real de conectar el Gran Área Metropolitana con la Zona
+                            Norte de Costa
+                            Rica de forma rápida, confiable y a un costo accesible.
+                        </p>
+                        <p class="nosotros__text">
+                            Somos una empresa familiar que entiende la importancia de cada paquete. Para nosotros, cada
+                            encomienda
+                            representa la confianza que nuestros clientes depositan en nosotros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MISION Y VISION -->
+        <section id="mision_vision" class="mision-vision" aria-labelledby="mision-vision-titulo">
+            <div class="section-container">
+                <header class="section-header reveal-fade-up">
+                    <h2 id="mision-vision-titulo" class="section-title">Filosofía Empresarial</h2>
+                </header>
+
+                <div class="mision-vision__grid reveal-stagger">
+                    <div class="mv__item">
+                        <h3 class="mv__title">
+                            <i class="fas fa-bullseye" aria-hidden="true"></i> Misión
+                        </h3>
+                        <p class="mv__text">
+                            Brindar servicios de logística y encomiendas seguros, rápidos y accesibles que conecten
+                            personas y
+                            empresas de Costa Rica con excelencia en el servicio.
+                        </p>
+                    </div>
+
+                    <div class="mv__item">
+                        <h3 class="mv__title">
+                            <i class="fas fa-eye" aria-hidden="true"></i> Visión
+                        </h3>
+                        <p class="mv__text">
+                            Ser la empresa de logística líder en la ruta GAM–Zona Norte, reconocida por nuestra
+                            confiabilidad y el
+                            trato humano a cada cliente.
+                        </p>
+                    </div>
+                </div>
+                <div class="mv__valores reveal-stagger" aria-label="Valores de JNK Express">
+                    <div class="valor-card">
+                        <i class="fas fa-handshake valor-card__icon" aria-hidden="true"></i>
+                        <span class="valor-card__label">Confianza</span>
+                    </div>
+
+                    <div class="valor-card">
+                        <i class="fas fa-bolt valor-card__icon" aria-hidden="true"></i>
+                        <span class="valor-card__label">Rapidez</span>
+                    </div>
+
+                    <div class="valor-card">
+                        <i class="fas fa-lock valor-card__icon" aria-hidden="true"></i>
+                        <span class="valor-card__label">Seguridad</span>
+                    </div>
+
+                    <div class="valor-card">
+                        <i class="fas fa-leaf valor-card__icon" aria-hidden="true"></i>
+                        <span class="valor-card__label">Responsabilidad</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- COBERTURA -->
+        <section id="cobertura" class="cobertura" aria-labelledby="cobertura-titulo">
+            <div class="section-container">
+
+                <header class="section-header reveal-fade-up">
+                    <h2 id="cobertura-titulo" class="section-title section-title--white">
+                        Llegamos donde<br>nos necesitás
+                    </h2>
+                </header>
+
+                <div class="cobertura__grid">
+
+                    <!-- destinos -->
+                    <div class="cobertura__lista reveal-fade-left">
+                        <ul class="destinos__list" role="list" aria-label="Lista de destinos de JNK Express">
+                            <li class="destinos__item">
+                                <span class="destinos__dot destinos__dot--hub" aria-hidden="true"></span>
+                                <strong>San José</strong> <span class="destinos__tag">bodega principal</span>
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                Río Frío
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                Puerto Viejo/ Sarapiqui
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                La Guaria
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                Pital
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                Aguas Zarcas
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                Venecia
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                Río Cuarto
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                La Virgen
+                            </li>
+                            <li class="destinos__item">
+                                <span class="destinos__dot" aria-hidden="true"></span>
+                                San Miguel
+                            </li>
+                        </ul>
+                        <aside class="cobertura__extra-card">
+                            <i class="fas fa-route cobertura__extra-icon" aria-hidden="true"></i>
+                            <div>
+                                <p class="cobertura__extra-title">También llegamos a zonas aledañas</p>
+                                <p class="cobertura__extra-text">Consultá con nuestro equipo para otras comunidades.</p>
+                            </div>
+                        </aside>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- CALCULADORA -->
+        <section id="calculadora" class="calculadora" aria-labelledby="calculadora-titulo">
+            <div class="section-container">
+
+                <div class="calculadora__grid">
+
+                    <!-- Texto explicativo -->
+                    <header class="calculadora__info reveal-fade-left">
+                        <!-- <p class="section-eyebrow">Tarifas transparentes</p> -->
+                        <h2 id="calculadora-titulo" class="section-title section-title--left">
+                            Calculá tu envío<br>en segundos
+                        </h2>
+                        <p class="calculadora__desc">
+                            Ingresá los datos de tu paquete y obtené un estimado de costo inmediato.<br> La tarifa final
+                            se confirma
+                            en
+                            sede según el destino y características del envío.
+                        </p>
+                        <ul class="calculadora__features" aria-label="Características del servicio">
+                            <li class="calculadora__feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                1200 colones precio base
+                            </li>
+                            <li class="calculadora__feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                Se cobra adicional a partir de 6Kg
+                            </li>
+                            <li class="calculadora__feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                Tarifas base por destino
+                            </li>
+                            <li class="calculadora__feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                2000 colones precio base desde bodega principal
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50683362762?text=Hola%2C%20quisiera%20confirmar%20una%20tarifa%20de%20env%C3%ADo."
+                            target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--lg"
+                            aria-label="Confirmar tarifa por WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            Confirmar
+                        </a>
+                    </header>
+
+                    <!-- Formulario calculadora completo -->
+                    <div class="calculadora__form-wrap reveal-fade-right">
+                        <form id="calc-form" class="calc-form" novalidate
+                            aria-label="Calculadora de envíos JNK Express">
+
+                            <div class="calc-form__row">
+                                <div class="calc-form__field">
+                                    <label for="calc-origen" class="calc-form__label">
+                                        <i class="fas fa-map-pin" aria-hidden="true"></i>
+                                        Origen
+                                    </label>
+                                    <select id="calc-origen" name="calc-origen" class="calc-form__select"
+                                        aria-required="true">
+                                        <option value="" disabled selected>Seleccionar origen</option>
+                                        <option value="sanjose">San José</option>
+                                        <option value="sarapiqui">Sarapiqui</option>
+                                        <option value="sancarlos">San Carlos</option>
+                                    </select>
+                                </div>
+
+                                <div class="calc-form__field">
+                                    <label for="calc-destino" class="calc-form__label">
+                                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                                        Destino
+                                    </label>
+                                    <select id="calc-destino" name="calc-destino" class="calc-form__select"
+                                        aria-required="true">
+                                        <option value="" disabled selected>Seleccionar destino</option>
+                                        <option value="riofrio">Río Frío</option>
+                                        <option value="laguaria">La Guaria</option>
+                                        <option value="pital">Pital</option>
+                                        <option value="aguaszarcas">Aguas Zarcas</option>
+                                        <option value="venecia">Venecia</option>
+                                        <option value="riocuarto">Río Cuarto</option>
+                                        <option value="lavirgen">La Virgen</option>
+                                        <option value="sanmiguel">San Miguel</option>
+                                        <option value="sanjose">San José</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="calc-form__field">
+                                <label for="calc-peso" class="calc-form__label">
+                                    <i class="fas fa-weight-hanging" aria-hidden="true"></i>
+                                    Peso (kg)
+                                </label>
+                                <input type="range" id="calc-peso" name="calc-peso" class="calc-form__input" min="0.1"
+                                    max="50" step="0.1" value="5.0" aria-required="true">
+
+                            </div>
+
+                            <div class="calc-form__dimensiones">
+                                <p class="calc-form__dimensiones-title">
+                                    <i class="fas fa-cube" aria-hidden="true"></i>
+                                    Dimensiones del paquete (cm)
+                                </p>
+                                <div class="calc-form__row calc-form__row--3">
+                                    <div class="calc-form__field">
+                                        <label for="calc-largo" class="calc-form__label">Largo</label>
+                                        <input type="range" id="calc-largo" name="calc-largo" class="calc-form__input"
+                                            min="1" max="200" step="1" value="30">
+                                    </div>
+                                    <div class="calc-form__field">
+                                        <label for="calc-ancho" class="calc-form__label">Ancho</label>
+                                        <input type="range" id="calc-ancho" name="calc-ancho" class="calc-form__input"
+                                            min="1" max="200" step="1" value="30">
+                                    </div>
+                                    <div class="calc-form__field">
+                                        <label for="calc-alto" class="calc-form__label">Alto</label>
+                                        <input type="range" id="calc-alto" name="calc-alto" class="calc-form__input"
+                                            min="1" max="200" step="1" value="30">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" id="calc-btn" class="btn btn--primary btn--full btn--lg"
+                                aria-label="Calcular costo de envío">
+                                <i class="fas fa-calculator" aria-hidden="true"></i>
+                                Calcular aproximado
+                            </button>
+
+                        </form>
+
+                        <!-- Resultado del cálculo -->
+                        <output id="calc-resultado" class="calc-resultado" aria-live="polite" aria-atomic="true" hidden>
+                            <div class="calc-resultado__inner">
+                                <p class="calc-resultado__label">Precio estimado</p>
+                                <p id="calc-precio" class="calc-resultado__precio">₡0</p>
+                                <p class="calc-resultado__desglose" id="calc-desglose"></p>
+                                <p class="calc-resultado__disclaimer">
+                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                    Precio estimado sujeto a validación en sede.
+                                </p>
+                                <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn--whatsapp btn--full" aria-label="Confirmar envío por WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    Confirmar tarifa
+                                </a>
+                            </div>
+                        </output>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SEDE -->
+        <section id="sedes" class="sedes" aria-labelledby="sedes-titulo">
+            <div class="section-container">
+
+                <header class="section-header reveal-fade-up">
+                    <p class="section-eyebrow">Ubicación</p>
+                    <h2 id="sedes-titulo" class="section-title">Sede Central</h2>
+                </header>
+
+                <div class="sedes__grid">
+
+                    <article class="sede-card reveal-fade-left" aria-label="Sede San José de JNK Express">
+                        <!-- REEMPLAZAR: foto real de la sede de San José -->
+                        <figure class="sede-card__img-wrap">
+                            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80"
+                                alt="Sede de JNK Express en San José, Costa Rica" loading="lazy" width="800"
+                                height="500" class="sede-card__img">
+                            <div class="sede-card__img-overlay" aria-hidden="true"></div>
+                            <figcaption class="sede-card__badge">Sede Principal</figcaption>
+                        </figure>
+                        <div class="sede-card__content">
+                            <h3 class="sede-card__title">
+                                <i class="fas fa-building" aria-hidden="true"></i>
+                                Sede San José
+                            </h3>
+                            <address class="sede-card__address">
+                                <p>
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    Encomiendas Golfo Express, Calle 10, Avenida 11, San José, Costa Rica
+                                </p>
+                                <p>
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                    Lun–Vie: 8:00 a.m.–6:00 p.m.
+                                </p>
+                                <p>
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                    Sáb: 8:00 a.m.–12:00 m.d.
+                                </p>
+                                <p>
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                    8336-2762
+                                </p>
+                            </address>
+                            <div class="sede-card__actions">
+                                <a href="https://maps.app.goo.gl/nBpJiD12Nc4AhbwN9" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--outline btn--sm"
+                                    aria-label="Ver sede San José en Google Maps">
+                                    <i class="fas fa-map" aria-hidden="true"></i>
+                                    Google Maps
+                                </a>
+                                <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn--whatsapp btn--sm" aria-label="Contactar sede San José por WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    Contactar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Mapa Google Maps Costa Rica -->
+                    <figure class="cobertura__figure reveal-fade-right">
+                        <div class="cobertura__mapa-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!4v1781680748551!6m8!1m7!1sWpvnLh--ypLMEQh6GgXbog!2m2!1d9.940238867967249!2d-84.08284470241398!3f271.18284587622827!4f-0.8905675488793747!5f0.7820865974627469"
+                                class="cobertura__iframe" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Ubicación de bodega en San José, Costa Rica"></iframe>
+                        </div>
+                    </figure>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- GALERIA -->
+        <section id="galeria" class="galeria" aria-labelledby="galeria-titulo">
+            <div class="section-container">
+
+                <header class="galeria__header">
+                    <div class="reveal-fade-up">
+                        <p class="section-eyebrow">Nuestro trabajo</p>
+                        <h2 id="galeria-titulo" class="section-title">Galería</h2>
+                    </div>
+                </header>
+
+                <div class="galeria__grid reveal-stagger" role="list" aria-label="Galería de imágenes JNK Express">
+
+                    <!-- REEMPLAZAR: foto real del cliente — camiones en ruta -->
+                    <button class="galeria__item" data-index="0" aria-label="Abrir imagen 1: Camión JNK Express en ruta"
+                        role="listitem">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80"
+                            alt="Camión de transporte JNK Express en ruta hacia la Zona Norte" loading="lazy"
+                            width="800" height="600" class="galeria__img">
+                        <div class="galeria__overlay" aria-hidden="true">
+                            <i class="fas fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </button>
+
+                    <!-- REEMPLAZAR: foto real del cliente — operaciones de bodega -->
+                    <button class="galeria__item galeria__item--tall" data-index="1"
+                        aria-label="Abrir imagen 2: Operaciones de bodega" role="listitem">
+                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80"
+                            alt="Operaciones de bodega y clasificación de paquetes" loading="lazy" width="600"
+                            height="900" class="galeria__img">
+                        <div class="galeria__overlay" aria-hidden="true">
+                            <i class="fas fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </button>
+
+                    <!-- REEMPLAZAR: foto real del cliente — entrega de paquete -->
+                    <button class="galeria__item" data-index="2" aria-label="Abrir imagen 3: Entrega de paquete"
+                        role="listitem">
+                        <img src="https://images.unsplash.com/photo-1590004953392-5aba2e72269a?w=800&q=80"
+                            alt="Repartidor entregando paquete al cliente — JNK Express" loading="lazy" width="800"
+                            height="600" class="galeria__img">
+                        <div class="galeria__overlay" aria-hidden="true">
+                            <i class="fas fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </button>
+
+                    <!-- REEMPLAZAR: foto real del cliente — flota de vehículos -->
+                    <button class="galeria__item" data-index="3" aria-label="Abrir imagen 4: Flota de vehículos"
+                        role="listitem">
+                        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80"
+                            alt="Flota de transporte de JNK Express" loading="lazy" width="800" height="600"
+                            class="galeria__img">
+                        <div class="galeria__overlay" aria-hidden="true">
+                            <i class="fas fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </button>
+
+                    <!-- REEMPLAZAR: foto real del cliente — paisaje Zona Norte Costa Rica -->
+                    <button class="galeria__item galeria__item--tall" data-index="4"
+                        aria-label="Abrir imagen 5: Paisaje de la Zona Norte" role="listitem">
+                        <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=600&q=80"
+                            alt="Carretera de la Zona Norte de Costa Rica" loading="lazy" width="600" height="900"
+                            class="galeria__img">
+                        <div class="galeria__overlay" aria-hidden="true">
+                            <i class="fas fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </button>
+
+                    <!-- REEMPLAZAR: foto real del cliente — paquetes listos para envío -->
+                    <button class="galeria__item" data-index="5" aria-label="Abrir imagen 6: Paquetes listos para envío"
+                        role="listitem">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80"
+                            alt="Paquetes organizados y listos para ser enviados" loading="lazy" width="800"
+                            height="600" class="galeria__img">
+                        <div class="galeria__overlay" aria-hidden="true">
+                            <i class="fas fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imágenes"
+            hidden>
+            <div class="lightbox__backdrop" id="lightbox-backdrop" aria-hidden="true"></div>
+            <button class="lightbox__close" id="lightbox-close" aria-label="Cerrar visualizador de imágenes">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Imagen anterior">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <div class="lightbox__content">
+                <img id="lightbox-img" src="" alt="" class="lightbox__img">
+                <p id="lightbox-caption" class="lightbox__caption"></p>
+            </div>
+            <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Imagen siguiente">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </div>
+        <!-- VIDEO -->
+        <section id="video" class="video-section" aria-labelledby="video-titulo">
+            <div class="section-container">
+
+                <div class="video-section__grid">
+
+                    <!-- Texto -->
+                    <div class="video-section__content reveal-fade-left">
+                        <p class="section-eyebrow section-eyebrow--light">Conocenos mejor</p>
+                        <h2 id="video-titulo" class="section-title section-title--white">
+                            Conocé más sobre<br>JNK Express
+                        </h2>
+                        <p class="video-section__desc">
+                            Mirá cómo hacemos lo que nos apasiona: conectar personas, familias y empresas a través de un
+                            servicio de
+                            encomiendas confiable y humano.
+                        </p>
+                        <button id="video-play-btn" class="btn btn--primary btn--lg video-section__btn"
+                            aria-label="Reproducir video corporativo de JNK Express">
+                            <i class="fas fa-play" aria-hidden="true"></i>
+                            Ver video
+                        </button>
+                    </div>
+
+                    <!-- Thumbnail con botón play -->
+                    <div class="video-section__thumb-wrap reveal-fade-right">
+                        <!-- REEMPLAZAR: thumbnail con screenshot del video corporativo del cliente -->
+                        <div class="video-thumb" id="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=900&q=80"
+                                alt="Miniatura del video corporativo — JNK Express" loading="lazy" width="900"
+                                height="506" class="video-thumb__img">
+                            <div class="video-thumb__overlay" aria-hidden="true"></div>
+                            <button class="video-thumb__play-btn" id="video-thumb-btn"
+                                aria-label="Reproducir video corporativo de JNK Express">
+                                <i class="fas fa-play" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Modal de video -->
+        <div id="video-modal" class="video-modal" role="dialog" aria-modal="true"
+            aria-label="Video corporativo JNK Express" hidden>
+            <div class="video-modal__backdrop" id="video-modal-backdrop" aria-hidden="true"></div>
+            <div class="video-modal__content">
+                <button class="video-modal__close" id="video-modal-close" aria-label="Cerrar video">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                <!-- REEMPLAZAR: URL de YouTube del cliente -->
+                <!-- El src se asigna en JavaScript solo al abrir para no cargar innecesariamente -->
+                <iframe id="video-iframe" class="video-modal__iframe" src="" title="Video corporativo JNK Express"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <!-- TESTIMONIOS -->
+        <section id="testimonios" class="testimonios" aria-labelledby="testimonios-titulo">
+            <div class="section-container">
+
+                <header class="testimonios__header reveal-fade-up">
+                    <p class="section-eyebrow">Lo que dicen nuestros clientes</p>
+                    <h2 id="testimonios-titulo" class="section-title">Testimonios</h2>
+                </header>
+
+                <!-- Slider de testimonios -->
+                <div class="testimonios__slider" role="region" aria-label="Testimonios de clientes">
+
+                    <div class="testimonios__track" id="testimonios-track" aria-live="polite">
+
+                        <!-- Testimonio 1 — hipotético de prototipo -->
+                        <article class="testimonio-card" data-index="0" aria-label="Testimonio de María Fernández">
+                            <div class="testimonio-card__stars" aria-label="5 estrellas de calificación">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+                            <blockquote class="testimonio-card__quote">
+                                "Excelente servicio, rápidos, responsables y siempre atentos a mis consultas. Mi paquete
+                                llegó en
+                                perfectas condiciones al día siguiente. 100% recomendados."
+                            </blockquote>
+                            <div class="testimonio-card__author">
+                                <div class="testimonio-card__avatar" aria-hidden="true">MF</div>
+                                <div class="testimonio-card__info">
+                                    <p class="testimonio-card__name">María Fernández</p>
+                                    <p class="testimonio-card__role">Clienta frecuente • San José</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Testimonio 2 — hipotético de prototipo -->
+                        <article class="testimonio-card" data-index="1" aria-label="Testimonio de Carlos Rodríguez">
+                            <div class="testimonio-card__stars" aria-label="5 estrellas de calificación">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+                            <blockquote class="testimonio-card__quote">
+                                "Uso JNK Express para enviar mercadería a mi tienda en Río Frío cada semana. El servicio
+                                es puntual y el
+                                precio muy razonable. Es la empresa de confianza que todos necesitan."
+                            </blockquote>
+                            <div class="testimonio-card__author">
+                                <div class="testimonio-card__avatar" aria-hidden="true">CR</div>
+                                <div class="testimonio-card__info">
+                                    <p class="testimonio-card__name">Carlos Rodríguez</p>
+                                    <p class="testimonio-card__role">Empresario • Río Frío, Alajuela</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Testimonio 3 — hipotético de prototipo -->
+                        <article class="testimonio-card" data-index="2" aria-label="Testimonio de Andrea Mora">
+                            <div class="testimonio-card__stars" aria-label="5 estrellas de calificación">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+                            <blockquote class="testimonio-card__quote">
+                                "Por fin un servicio de encomiendas que llega a la Zona Norte sin contratiempos. Lo que
+                                otros prometían,
+                                JNK lo cumple. Atención al cliente impecable."
+                            </blockquote>
+                            <div class="testimonio-card__author">
+                                <div class="testimonio-card__avatar" aria-hidden="true">AM</div>
+                                <div class="testimonio-card__info">
+                                    <p class="testimonio-card__name">Andrea Mora</p>
+                                    <p class="testimonio-card__role">Emprendedora • Aguas Zarcas, Alajuela</p>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div><!-- /.testimonios__track -->
+
+                    <!-- Controles del slider -->
+                    <div class="testimonios__controls" aria-label="Controles de testimonios">
+                        <button class="testimonios__btn testimonios__btn--prev" id="test-prev"
+                            aria-label="Testimonio anterior">
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <div class="testimonios__dots" id="test-dots" role="tablist"
+                            aria-label="Selector de testimonio">
+                            <button class="testimonios__dot testimonios__dot--active" data-index="0" role="tab"
+                                aria-selected="true" aria-label="Testimonio 1"></button>
+                            <button class="testimonios__dot" data-index="1" role="tab" aria-selected="false"
+                                aria-label="Testimonio 2"></button>
+                            <button class="testimonios__dot" data-index="2" role="tab" aria-selected="false"
+                                aria-label="Testimonio 3"></button>
+                        </div>
+                        <button class="testimonios__btn testimonios__btn--next" id="test-next"
+                            aria-label="Siguiente testimonio">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </div><!-- /.testimonios__slider -->
+            </div>
+        </section>
+        <!-- CONTACTO -->
+        <section id="contacto" class="contacto" aria-labelledby="contacto-titulo">
+            <div class="section-container">
+
+                <div class="contacto__grid">
+
+                    <!-- Texto de contacto -->
+                    <div class="contacto__info reveal-fade-left">
+                        <p class="section-eyebrow section-eyebrow--light">¿Necesitás ayuda?</p>
+                        <h2 id="contacto-titulo" class="section-title section-title--white">
+                            Estamos para<br>ayudarte
+                        </h2>
+                        <p class="contacto__desc">
+                            Escribinos y con gusto te atenderemos a la brevedad.
+                        </p>
+
+                        <!-- Redes sociales -->
+                        <div class="contacto__social" aria-label="Redes sociales de JNK Express">
+                            <a href="https://www.facebook.com/share/1AAkf3fwno/?mibextid=wwXIfr" target="_blank"
+                                rel="noopener noreferrer" class="social__icon social__icon--facebook"
+                                aria-label="Facebook de JNK Express">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.instagram.com/transportes_jnk_express?igsh=MXRrdWt1YjNjZTAxag=="
+                                target="_blank" rel="noopener noreferrer" class="social__icon social__icon--instagram"
+                                aria-label="Instagram de JNK Express">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social__icon social__icon--tiktok"
+                                aria-label="TikTok de JNK Express (próximamente)">
+                                <!-- REEMPLAZAR: URL de TikTok cuando el cliente cree la cuenta -->
+                                <i class="fab fa-tiktok" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                                class="social__icon social__icon--whatsapp" aria-label="WhatsApp de JNK Express">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <!-- Información de contacto -->
+                        <div class="contacto__data" aria-label="Datos de contacto">
+                            <div class="contacto__data-item">
+                                <i class="fas fa-phone contacto__data-icon" aria-hidden="true"></i>
+                                <div>
+                                    <p class="contacto__data-label">Teléfono</p>
+                                    <a href="tel:+50683362762" class="contacto__data-value">8336-2762</a>
+                                </div>
+                            </div>
+                            <div class="contacto__data-item">
+                                <i class="fab fa-whatsapp contacto__data-icon" aria-hidden="true"></i>
+                                <div>
+                                    <p class="contacto__data-label">WhatsApp</p>
+                                    <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                                        class="contacto__data-value" aria-label="Ir a WhatsApp de JNK Express">
+                                        wa.me/50683362762
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="contacto__data-item">
+                                <i class="fas fa-envelope contacto__data-icon" aria-hidden="true"></i>
+                                <div>
+                                    <p class="contacto__data-label">Correo</p>
+                                    <a href="mailto:info@jnkexpress.cr"
+                                        class="contacto__data-value">info@jnkexpress.cr</a>
+                                </div>
+                            </div>
+                            <div class="contacto__data-item">
+                                <i class="fas fa-clock contacto__data-icon" aria-hidden="true"></i>
+                                <div>
+                                    <p class="contacto__data-label">Horarios</p>
+                                    <p class="contacto__data-value">Lunes a Viernes: 8:00 a.m.–6:00 p.m.</p>
+                                    <p class="contacto__data-value">Sábado: 8:00 a.m.–12:00 m.d.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de contacto → WhatsApp -->
+                    <div class="contacto__form-wrap reveal-fade-right">
+                        <form id="contacto-form" class="contacto-form" novalidate
+                            aria-label="Formulario de contacto JNK Express">
+
+                            <div class="contacto-form__field">
+                                <label for="cf-nombre" class="contacto-form__label">Nombre completo</label>
+                                <input type="text" id="cf-nombre" name="cf-nombre" class="contacto-form__input"
+                                    placeholder="Tu nombre" autocomplete="name" aria-required="true"
+                                    aria-describedby="cf-nombre-error">
+                                <span id="cf-nombre-error" class="contacto-form__error" role="alert"
+                                    aria-live="polite"></span>
+                            </div>
+
+                            <div class="contacto-form__row">
+                                <div class="contacto-form__field">
+                                    <label for="cf-telefono" class="contacto-form__label">Teléfono</label>
+                                    <input type="tel" id="cf-telefono" name="cf-telefono" class="contacto-form__input"
+                                        placeholder="8888-8888" autocomplete="tel" aria-required="true"
+                                        aria-describedby="cf-telefono-error">
+                                    <span id="cf-telefono-error" class="contacto-form__error" role="alert"
+                                        aria-live="polite"></span>
+                                </div>
+
+                                <div class="contacto-form__field">
+                                    <label for="cf-email" class="contacto-form__label">Correo electrónico</label>
+                                    <input type="email" id="cf-email" name="cf-email" class="contacto-form__input"
+                                        placeholder="tú@correo.com" autocomplete="email" aria-required="true"
+                                        aria-describedby="cf-email-error">
+                                    <span id="cf-email-error" class="contacto-form__error" role="alert"
+                                        aria-live="polite"></span>
+                                </div>
+                            </div>
+
+                            <div class="contacto-form__field">
+                                <label for="cf-mensaje" class="contacto-form__label">Mensaje</label>
+                                <textarea id="cf-mensaje" name="cf-mensaje" class="contacto-form__textarea"
+                                    placeholder="Escribí tu mensaje o consulta aquí..." rows="4" aria-required="true"
+                                    aria-describedby="cf-mensaje-error"></textarea>
+                                <span id="cf-mensaje-error" class="contacto-form__error" role="alert"
+                                    aria-live="polite"></span>
+                            </div>
+
+                            <button type="submit" id="cf-submit" class="btn btn--primary btn--full btn--lg"
+                                aria-label="Enviar mensaje a JNK Express por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                Enviar mensaje
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+
+                            <p class="contacto-form__disclaimer">
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                                Tu información se envía directamente a WhatsApp, no se almacena en ningún servidor.
+                            </p>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo" aria-label="Pie de página JNK Express">
+        <div class="footer__container">
+
+            <div class="footer__grid">
+
+                <!-- Columna 1: Logo y tagline -->
+                <div class="footer__col footer__col--brand">
+                    <a href="#inicio" class="footer__logo-link" aria-label="JNK Express — Ir al inicio">
+                        <!-- REEMPLAZAR: logo PNG del cliente -->
+                        <img src="assets/image/logos/jnk-logo.svg" alt="JNK Express" class="navbar__logo-img">
+                    </a>
+                    <p class="footer__tagline">
+                        Conectamos el GAM con la Zona Norte Rápidos, seguros y confiables.
+                    </p>
+                    <!-- Redes sociales footer -->
+                    <div class="footer__social" aria-label="Redes sociales de JNK Express">
+                        <a href="https://www.facebook.com/share/1AAkf3fwno/?mibextid=wwXIfr" target="_blank"
+                            rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook de JNK Express">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/transportes_jnk_express?igsh=MXRrdWt1YjNjZTAxag=="
+                            target="_blank" rel="noopener noreferrer" class="footer__social-link"
+                            aria-label="Instagram de JNK Express">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="TikTok de JNK Express (próximamente)">
+                            <!-- REEMPLAZAR: URL TikTok -->
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link footer__social-link--wa" aria-label="WhatsApp de JNK Express">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Links rápidos -->
+                <nav class="footer__col" aria-label="Enlaces rápidos">
+                    <h3 class="footer__col-title">Enlaces rápidos</h3>
+                    <ul class="footer__links" role="list">
+                        <li><a href="#inicio" class="footer__link">Inicio</a></li>
+                        <li><a href="#nosotros" class="footer__link">Nosotros</a></li>
+                        <li><a href="#servicios" class="footer__link">Servicios</a></li>
+                        <li><a href="#cobertura" class="footer__link">Cobertura</a></li>
+                        <li><a href="#sedes" class="footer__link">Sedes</a></li>
+                        <li><a href="#tarifas" class="footer__link">Tarifas</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Columna 3: Cobertura -->
+                <div class="footer__col" aria-label="Destinos de cobertura">
+                    <h3 class="footer__col-title">Cobertura</h3>
+                    <ul class="footer__links" role="list">
+                        <li><a href="#cobertura" class="footer__link">San José</a></li>
+                        <li><a href="#cobertura" class="footer__link">Río Frío</a></li>
+                        <li><a href="#cobertura" class="footer__link">La Guaria</a></li>
+                        <li><a href="#cobertura" class="footer__link">Pital</a></li>
+                        <li><a href="#cobertura" class="footer__link">Aguas Zarcas</a></li>
+                        <li><a href="#cobertura" class="footer__link">La Virgen</a></li>
+                        <li><a href="#cobertura" class="footer__link">San Miguel</a></li>
+                        <li><a href="#cobertura" class="footer__link">Aguas Zarcas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Contacto y horarios -->
+                <div class="footer__col" aria-label="Información de contacto">
+                    <h3 class="footer__col-title">Contáctenos</h3>
+                    <ul class="footer__contact-list" role="list">
+                        <li class="footer__contact-item">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+50683362762" class="footer__contact-link">8336-2762</a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <a href="https://wa.me/50683362762" target="_blank" rel="noopener noreferrer"
+                                class="footer__contact-link" aria-label="Ir a WhatsApp de JNK Express">
+                                WhatsApp: 8336-2762
+                            </a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:info@jnkexpress.cr" class="footer__contact-link">info@jnkexpress.cr</a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <span class="footer__contact-text">
+                                Lun–Vie: 8:00 a.m.–6:00 p.m.<br>
+                                Sáb: 8:00 a.m.–12:00 m.d.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div><!-- /.footer__grid -->
+
+            <!-- Barra inferior del footer -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 JNK Express. Todos los derechos reservados.
+                </p>
+                <nav class="footer__legal" aria-label="Política y términos">
+                    <a href="privacidad.html" class="footer__legal-link">Política de privacidad</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="terminos.html" class="footer__legal-link">Términos de uso</a>
+                </nav>
+            </div>
+
+        </div><!-- /.footer__container -->
+    </footer>
+    <!-- BOTON VOLVER INICIO -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver al inicio de la página" hidden>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
