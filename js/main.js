@@ -1,40 +1,10 @@
-/**
- * ════════════════════════════════════════════════════════════════
- *  JNK EXPRESS — main.js
- *  Archivo principal de comportamiento e interactividad
- *
- *  Arquitectura: Funciones modulares, una responsabilidad cada una.
- *  Patrón: Función de inicialización central que orquesta el arranque.
- *
- *  Funciones incluidas:
- *  - initializeNavbar()           → Navbar sticky glassmorphism
- *  - initializeMobileMenu()       → Menú hamburguesa mobile
- *  - initializeHeroCanvas()       → Canvas con red de partículas
- *  - initializeCalculator()       → Calculadora de envíos completa
- *  - initializeCoverageMap()      → Tooltips del mapa SVG
- *  - initializeGallery()          → Galería + Lightbox
- *  - initializeTestimonials()     → Slider de testimonios
- *  - initializeScrollAnimations() → Reveal on scroll con IntersectionObserver
- *  - initializeStatCounters()     → Contadores animados
- *  - initializeContactForm()      → Validación + envío a WhatsApp
- *  - initializeVideoModal()       → Modal de video YouTube
- *  - initializeBackToTop()        → Botón volver arriba
- *  - initializeSmoothScroll()     → Navegación suave a secciones
- * ════════════════════════════════════════════════════════════════
- */
 
-
-/* ══════════════════════════════════════
-   PUNTO DE ENTRADA PRINCIPAL
-   Se ejecuta cuando el DOM está completamente cargado
-   ══════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', function () {
     initializeNavbar();
     initializeMobileMenu();
     initializeHeroCanvas();
     initializeCalculator();
-    initializeCoverageMap();
     initializeGallery();
     initializeTestimonials();
     initializeScrollAnimations();
@@ -50,17 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
    NAVBAR — Glassmorphism en scroll
    ══════════════════════════════════════ */
 
-/**
- * initializeNavbar
- *
- * Qué hace: Cambia la apariencia del navbar según el scroll de la página.
- * Cómo funciona: Escucha el evento 'scroll'. Si el usuario bajó más de 60px,
- *   agrega la clase CSS 'navbar--scrolled' que activa el glassmorphism.
- *   También marca el link activo según la sección visible.
- * Por qué así: Es más eficiente que cambiar estilos directamente en JS.
- *   La clase CSS tiene las propiedades de transición definidas,
- *   lo que permite que el navegador optimice la animación.
- */
+
 function initializeNavbar() {
     var navbar = document.getElementById('navbar');
     var navLinks = document.querySelectorAll('.navbar__link');
@@ -89,12 +49,7 @@ function initializeNavbar() {
 }
 
 /**
- * updateActiveNavLink
- *
- * Qué hace: Resalta el link del navbar que corresponde a la sección visible.
- * Cómo funciona: Revisa qué sección del HTML está en el viewport
- *   y agrega la clase 'navbar__link--active' al link correspondiente.
- *
+
  * @param {NodeList} navLinks - Lista de todos los links del navbar
  */
 function updateActiveNavLink(navLinks) {
@@ -122,16 +77,7 @@ function updateActiveNavLink(navLinks) {
    MENÚ MOBILE — Hamburguesa
    ══════════════════════════════════════ */
 
-/**
- * initializeMobileMenu
- *
- * Qué hace: Abre y cierra el menú de navegación en pantallas pequeñas.
- * Cómo funciona: Alterna clases CSS y atributos ARIA al hacer click
- *   en el botón hamburguesa. También cierra el menú al hacer click
- *   en un link de navegación.
- * Por qué así: Los atributos ARIA son necesarios para que lectores de
- *   pantalla (usuarios con discapacidad visual) entiendan el estado del menú.
- */
+
 function initializeMobileMenu() {
     var menuBtn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
@@ -187,20 +133,7 @@ function closeMobileMenu(menuBtn, menu) {
    HERO CANVAS — Red de partículas animada
    ══════════════════════════════════════ */
 
-/**
- * initializeHeroCanvas
- *
- * Qué hace: Dibuja una red de puntos luminosos conectados por líneas
- *   sobre el fondo del hero, creando el efecto de "red logística".
- * Cómo funciona: Usa la API Canvas 2D del navegador para dibujar
- *   puntos que se mueven lentamente. Si dos puntos están cerca,
- *   dibuja una línea semitransparente entre ellos.
- *   requestAnimationFrame asegura que la animación sea fluida y
- *   eficiente (solo dibuja cuando el navegador está listo).
- * Por qué así: Es una solución de cero dependencias, muy liviana y
- *   completamente controlable para ajustar al diseño de la marca.
- *   Se desactiva si el usuario prefiere movimiento reducido.
- */
+
 function initializeHeroCanvas() {
     var canvas = document.getElementById('hero-canvas');
 
@@ -323,15 +256,8 @@ function initializeHeroCanvas() {
    CALCULADORA DE ENVÍOS
    ══════════════════════════════════════ */
 
-/**
- * initializeCalculator
- *
- * Qué hace: Configura ambas calculadoras (hero y sección completa).
- * Cómo funciona: Escucha el submit de ambos formularios y llama
- *   a calculateShippingCost() con los datos ingresados.
- */
+
 function initializeCalculator() {
-    // Calculadora \u2014 sección dedicada (única en la página)
     var calcForm = document.getElementById('calc-form');
     if (calcForm) {
         calcForm.addEventListener('submit', function (event) {
@@ -353,27 +279,38 @@ function initializeCalculator() {
             );
         });
     }
+    // Sliders con valor numérico visible y barra de progreso
+    var sliders = [
+        { input: 'calc-peso', display: 'calc-peso-val', unidad: 'kg' },
+        { input: 'calc-largo', display: 'calc-largo-val', unidad: 'cm' },
+        { input: 'calc-ancho', display: 'calc-ancho-val', unidad: 'cm' },
+        { input: 'calc-alto', display: 'calc-alto-val', unidad: 'cm' },
+    ];
+
+    sliders.forEach(function (slider) {
+        var input = document.getElementById(slider.input);
+        var display = document.getElementById(slider.display);
+        if (!input || !display) return;
+
+        input.addEventListener('input', function () {
+            display.textContent = input.value + ' ' + slider.unidad;
+            var porcentaje = ((input.value - input.min) / (input.max - input.min)) * 100;
+            input.style.background = 'linear-gradient(to right, var(--color-red) ' + porcentaje + '%, rgba(255,255,255,0.15) ' + porcentaje + '%)';
+        });
+    });
+
+    // Inicializar progreso visible al cargar
+    sliders.forEach(function (slider) {
+        var input = document.getElementById(slider.input);
+        if (!input) return;
+        var porcentaje = ((input.value - input.min) / (input.max - input.min)) * 100;
+        input.style.background = 'linear-gradient(to right, var(--color-red) ' + porcentaje + '%, rgba(255,255,255,0.15) ' + porcentaje + '%)';
+    });
 }
 
 /**
  * calculateShippingCost
- *
- * Qué hace: Calcula el costo estimado de un envío.
- * Cómo funciona:
- *   1. Obtiene la tarifa base según el destino
- *   2. Calcula el peso volumétrico con la fórmula estándar courier
- *   3. Usa el mayor entre peso real y volumétrico (peso facturable)
- *   4. Suma tarifa base + (peso facturable × cargo por kg)
- *
- * IMPORTANTE: Esta es una simulación para el prototipo.
- * Las tarifas reales las define el cliente.
- * Para integrar con una API real en el futuro, reemplazar el
- * contenido de esta función con un fetch() al endpoint del cliente.
- *
- * Fórmula volumétrica estándar courier internacional:
- *   Peso volumétrico (kg) = Largo × Ancho × Alto (en cm) / 5000
- * Esta fórmula la usan DHL, FedEx y Correos de Costa Rica.
- *
+
  * @param {string} destino  - Código del destino (ej: 'riofrio')
  * @param {number} pesoReal - Peso físico del paquete en kg
  * @param {number} largo    - Largo del paquete en cm
@@ -421,30 +358,8 @@ function calculateShippingCost(destino, pesoReal, largo, ancho, alto) {
     return Math.round(total);
 }
 
-/**
- * mostrarPrecioHero
- *
- * Qué hace: Muestra el precio calculado en la calculadora del hero.
- * Cómo funciona: Anima el número desde 0 hasta el valor final
- *   usando setInterval y una función de easing cuadrático.
- *   Al terminar, aplica un efecto de brillo (glow) temporal.
- *
- * @param {number} costoFinal - El precio calculado en colones
- */
-function mostrarPrecioHero(costoFinal) {
-    var elementoPrecio = document.getElementById('hero-calc-price');
-    if (!elementoPrecio) return;
 
-    animarContador(elementoPrecio, 0, costoFinal, 800, '₡', '', true);
-}
 
-/**
- * mostrarResultadoCalculadora
- *
- * Qué hace: Muestra el resultado completo en la sección calculadora.
- * Cómo funciona: Hace visible el contenedor del resultado,
- *   anima el precio y muestra el desglose del cálculo.
- */
 function mostrarResultadoCalculadora(costo, destino, peso, largo, ancho, alto) {
     var contenedor = document.getElementById('calc-resultado');
     var elementoPrecio = document.getElementById('calc-precio');
@@ -465,6 +380,25 @@ function mostrarResultadoCalculadora(costo, destino, peso, largo, ancho, alto) {
         elementoDesglose.textContent =
             'Peso real: ' + peso + ' kg | Peso vol.: ' + pesoVol + ' kg | Peso facturable: ' + pesoFacturable + ' kg';
     }
+    // Construir mensaje pre-listo para WhatsApp con los datos del cálculo
+    var selectDestino = document.getElementById('calc-destino');
+    var selectOrigen = document.getElementById('calc-origen');
+    var textoDestino = selectDestino ? selectDestino.options[selectDestino.selectedIndex].text : destino;
+    var textoOrigen = selectOrigen ? selectOrigen.options[selectOrigen.selectedIndex].text : 'San José';
+
+    var mensajeWA = '🚚 *Consulta de tarifa — JNK Express*\n\n' +
+        '📍 *Origen:* ' + textoOrigen + '\n' +
+        '📍 *Destino:* ' + textoDestino + '\n' +
+        '⚖️ *Peso real:* ' + peso + ' kg\n' +
+        '📦 *Dimensiones:* ' + largo + ' × ' + ancho + ' × ' + alto + ' cm\n' +
+        '💰 *Precio estimado:* ₡' + costo.toLocaleString('es-CR');
+
+    var urlWA = 'https://wa.me/50683362762?text=' + encodeURIComponent(mensajeWA);
+
+    var btnWA = document.getElementById('calc-wa-btn');
+    if (btnWA) {
+        btnWA.setAttribute('href', urlWA);
+    }
 
     // Hacer scroll suave hacia el resultado
     setTimeout(function () {
@@ -473,62 +407,9 @@ function mostrarResultadoCalculadora(costo, destino, peso, largo, ancho, alto) {
 }
 
 
-/* ══════════════════════════════════════
-   MAPA DE COBERTURA — Tooltips SVG
-   ══════════════════════════════════════ */
-
-/**
- * initializeCoverageMap
- *
- * Qué hace: Agrega interactividad a los puntos del mapa SVG.
- * Cómo funciona: Al hacer hover sobre un punto del mapa,
- *   muestra el nombre de la ciudad y resalta el punto.
- * Por qué así: El SVG inline permite acceder a los elementos
- *   como si fueran elementos HTML normales, usando querySelector.
- */
-function initializeCoverageMap() {
-    var ciudades = document.querySelectorAll('.mapa__ciudad');
-
-    if (!ciudades.length) return;
-
-    ciudades.forEach(function (ciudad) {
-        var punto = ciudad.querySelector('.mapa__punto');
-
-        if (!punto) return;
-
-        // Al pasar el mouse, escalar el punto
-        ciudad.addEventListener('mouseenter', function () {
-            punto.style.transform = 'scale(1.5)';
-            punto.style.transformOrigin = 'center';
-            ciudad.style.cursor = 'pointer';
-        });
-
-        // Al quitar el mouse, restaurar
-        ciudad.addEventListener('mouseleave', function () {
-            punto.style.transform = 'scale(1)';
-        });
-    });
-}
 
 
-/* ══════════════════════════════════════
-   GALERÍA + LIGHTBOX
-   ══════════════════════════════════════ */
 
-/**
- * initializeGallery
- *
- * Qué hace: Configura la galería de imágenes con su lightbox.
- * Cómo funciona:
- *   1. Recoge todas las imágenes de la galería en un array
- *   2. Al hacer click en cualquier imagen, abre el lightbox
- *      mostrando esa imagen
- *   3. Los botones prev/next navegan entre imágenes
- *   4. Escape o click en backdrop cierra el lightbox
- *
- * La navegación funciona tanto con mouse como con teclado
- * (flechas izquierda/derecha y Escape).
- */
 function initializeGallery() {
     var items = document.querySelectorAll('.galeria__item');
     var lightbox = document.getElementById('lightbox');
@@ -642,7 +523,7 @@ function openLightbox(indice, imagenes, lightboxImg, lightboxCaption, lightbox) 
 /**
  * closeLightbox
  *
- * Qué hace: Oculta el lightbox y restaura el scroll de la página.
+ * 
  *
  * @param {Element} lightbox - Contenedor principal del lightbox
  */
@@ -656,18 +537,7 @@ function closeLightbox(lightbox) {
    TESTIMONIOS — Slider con prev/next
    ══════════════════════════════════════ */
 
-/**
- * initializeTestimonials
- *
- * Qué hace: Controla el slider de testimonios.
- * Cómo funciona:
- *   - Solo muestra el testimonio con la clase 'testimonio-card--active'
- *   - Los botones prev/next cambian cuál card tiene esa clase
- *   - Los dots de navegación reflejan el testimonio activo
- *   - Se avanza automáticamente cada 6 segundos
- * Por qué así: Una animación CSS (keyframe fade-slide-in) se encarga
- *   de la transición visual, separando la lógica del estilo.
- */
+
 function initializeTestimonials() {
     var cards = document.querySelectorAll('.testimonio-card');
     var dots = document.querySelectorAll('.testimonios__dot');
@@ -745,19 +615,7 @@ function initializeTestimonials() {
    SCROLL ANIMATIONS — Intersection Observer
    ══════════════════════════════════════ */
 
-/**
- * initializeScrollAnimations
- *
- * Qué hace: Activa animaciones de entrada cuando los elementos
- *   entran en el viewport al hacer scroll.
- * Cómo funciona: IntersectionObserver es una API nativa del navegador
- *   que observa cuándo un elemento aparece en la pantalla.
- *   Cuando el 15% del elemento es visible, agrega la clase 'is-visible'
- *   que dispara las animaciones CSS definidas en styles.css.
- * Por qué así: Es mucho más eficiente que escuchar el evento scroll
- *   y calcular posiciones manualmente. Cero dependencias externas.
- *   'once: true' (unobserve después de activar) evita re-animaciones.
- */
+
 function initializeScrollAnimations() {
     // Seleccionar todos los elementos que tienen clases de animación
     var elementosAnimados = document.querySelectorAll(
@@ -794,17 +652,7 @@ function initializeScrollAnimations() {
    CONTADORES ANIMADOS — Stats section
    ══════════════════════════════════════ */
 
-/**
- * initializeStatCounters
- *
- * Qué hace: Anima los números de la sección de estadísticas,
- *   contando desde 0 hasta el valor final.
- * Cómo funciona: Usa IntersectionObserver para detectar cuando
- *   los contadores entran al viewport. Luego llama a animarContador()
- *   para cada uno, que usa setInterval con easing cuadrático.
- * Por qué así: Los contadores solo se activan cuando el usuario
- *   los ve, haciendo el efecto más impactante.
- */
+
 function initializeStatCounters() {
     // Configuración de cada contador
     var contadores = [
@@ -852,12 +700,10 @@ function initializeStatCounters() {
 /**
  * animarContador
  *
- * Qué hace: Anima un número desde un valor inicial hasta el final.
- * Cómo funciona: Usa setInterval a 60fps con easing cuadrático
- *   para que la animación acelere al inicio y frene al final,
- *   dándole un efecto natural.
- *   Al terminar (opcionalmente) aplica efecto glow.
- *
+ * 
+ * 
+ * 
+ * 
  * @param {Element} elemento   - El elemento DOM donde se muestra el número
  * @param {number}  inicio     - Valor de inicio (usualmente 0)
  * @param {number}  fin        - Valor final objetivo
@@ -910,19 +756,7 @@ function animarContador(elemento, inicio, fin, duracion, prefijo, sufijo, conGlo
    FORMULARIO DE CONTACTO → WHATSAPP
    ══════════════════════════════════════ */
 
-/**
- * initializeContactForm
- *
- * Qué hace: Configura el formulario de contacto para que,
- *   al enviarlo, construya un mensaje y abra WhatsApp.
- * Cómo funciona:
- *   1. Valida todos los campos antes de enviar
- *   2. Si hay errores, los muestra inline (accesible con aria-live)
- *   3. Si todo está bien, construye un mensaje formateado
- *   4. Abre WhatsApp con ese mensaje pre-escrito
- * Por qué así: Sin backend, sin servidor, funciona 100% en el navegador.
- *   El cliente recibe el mensaje directamente en WhatsApp.
- */
+
 function initializeContactForm() {
     var formulario = document.getElementById('contacto-form');
 
@@ -951,10 +785,6 @@ function initializeContactForm() {
 
 /**
  * validateContactForm
- *
- * Qué hace: Valida todos los campos del formulario de contacto.
- * Cómo funciona: Revisa cada campo y muestra mensajes de error
- *   específicos si alguno no cumple las reglas.
  *
  * @returns {boolean} - true si todos los campos son válidos
  */
@@ -997,8 +827,6 @@ function validateContactForm() {
 /**
  * showFieldError
  *
- * Qué hace: Muestra un mensaje de error debajo de un campo del formulario.
- *
  * @param {Element} campo   - El elemento input o textarea con error
  * @param {string}  mensaje - El mensaje de error a mostrar
  */
@@ -1015,11 +843,7 @@ function showFieldError(campo, mensaje) {
 }
 
 /**
- * clearFieldError
- *
- * Qué hace: Limpia el mensaje de error de un campo.
- *
- * @param {Element} campo - El campo cuyo error se quiere limpiar
+ * @param {Element} campo
  */
 function clearFieldError(campo) {
     if (!campo) return;
@@ -1034,17 +858,8 @@ function clearFieldError(campo) {
 }
 
 /**
- * submitFormToWhatsApp
- *
- * Qué hace: Construye un mensaje con los datos del formulario y abre WhatsApp.
- * Cómo funciona: Toma los valores de cada campo, los formatea en un
- *   mensaje legible con emojis y los codifica como URL.
- *   Luego abre WhatsApp con ese mensaje pre-escrito.
- * Por qué así: No requiere backend ni servidor.
- *   Funciona 100% en el navegador y es compatible con Netlify sin configuración extra.
- *   El cliente recibe el mensaje en WhatsApp, que ya usa diariamente.
- *
- * @param {Event} event - El evento submit del formulario
+
+ * @param {Event} event
  */
 function submitFormToWhatsApp(event) {
     var nombre = document.getElementById('cf-nombre').value.trim();
@@ -1075,18 +890,7 @@ function submitFormToWhatsApp(event) {
    MODAL DE VIDEO
    ══════════════════════════════════════ */
 
-/**
- * initializeVideoModal
- *
- * Qué hace: Controla el modal que reproduce el video corporativo.
- * Cómo funciona:
- *   - Al abrir: asigna el src al iframe (para no cargar YouTube hasta necesitarlo)
- *     y muestra el modal
- *   - Al cerrar: limpia el src del iframe (detiene el video y libera recursos)
- * Por qué así: Si el src del iframe se cargara al inicio, YouTube cargaría
- *   inmediatamente (impactando el rendimiento). Asignarlo solo al abrir
- *   es una optimización de carga (lazy loading del video).
- */
+
 function initializeVideoModal() {
     var modal = document.getElementById('video-modal');
     var btnAbrir1 = document.getElementById('video-thumb-btn');
@@ -1139,14 +943,7 @@ function initializeVideoModal() {
    BOTÓN VOLVER ARRIBA
    ══════════════════════════════════════ */
 
-/**
- * initializeBackToTop
- *
- * Qué hace: Muestra un botón flotante para volver al inicio
- *   cuando el usuario baja más de 400px.
- * Cómo funciona: Escucha el evento scroll y controla la visibilidad
- *   del botón con el atributo 'hidden' y CSS para animar la transición.
- */
+
 function initializeBackToTop() {
     var boton = document.getElementById('back-to-top');
 
@@ -1172,17 +969,7 @@ function initializeBackToTop() {
    NAVEGACIÓN SUAVE — Smooth Scroll
    ══════════════════════════════════════ */
 
-/**
- * initializeSmoothScroll
- *
- * Qué hace: Hace que todos los links de ancla (#seccion) naveguen
- *   suavemente hasta la sección destino.
- * Cómo funciona: Intercepta el click en links internos, calcula
- *   la posición de la sección y hace scroll con compensación del navbar.
- * Por qué así: Aunque CSS tiene 'scroll-behavior: smooth', este enfoque
- *   en JS permite compensar la altura del navbar fijo, evitando que
- *   el contenido quede oculto debajo de él.
- */
+
 function initializeSmoothScroll() {
     var linksInternos = document.querySelectorAll('a[href^="#"]');
 
@@ -1199,7 +986,10 @@ function initializeSmoothScroll() {
             event.preventDefault();
 
             // Calcular posición con offset del navbar
-            var alturaNavbar = 72;
+            var alturaNavbar = parseInt(
+                getComputedStyle(document.documentElement)
+                    .getPropertyValue('--navbar-height')
+            ) || 72;
             var posicionSeccion = seccion.getBoundingClientRect().top + window.scrollY - alturaNavbar;
 
             window.scrollTo({
