@@ -13,7 +13,26 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeVideoModal();
     initializeBackToTop();
     initializeSmoothScroll();
+    initializeMapScroll();
 });
+// PARA QUE NO AFECTE SCROLL EL MAPA
+function initializeMapScroll() {
+    var mapaContainer = document.querySelector('.cobertura__mapa-container');
+    if (!mapaContainer) return;
+
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;cursor:pointer;';
+    mapaContainer.style.position = 'relative';
+    mapaContainer.appendChild(overlay);
+
+    overlay.addEventListener('click', function () {
+        overlay.style.display = 'none';
+    });
+
+    mapaContainer.addEventListener('mouseleave', function () {
+        overlay.style.display = 'block';
+    });
+}
 
 
 /* ══════════════════════════════════════
