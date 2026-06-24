@@ -322,17 +322,16 @@ function initializeCalculator() {
 function calculateShippingCost(origen, destino, peso, largo, ancho, alto) {
     // Precio base según origen
     var precioBase = (origen === 'sanjose') ? 2000 : 1200;
-
     // Peso volumétrico (fórmula estándar)
-    var pesoVolumetrico = (largo * ancho * alto) / 5000;
+    // var pesoVolumetrico = (largo * ancho * alto) / 5000;
 
     // Peso facturable — el mayor entre real y volumétrico
-    var pesoFacturable = Math.max(peso, pesoVolumetrico);
+    // var pesoFacturable = Math.max(peso, pesoVolumetrico);
 
-    // Costo adicional por kg extra a partir de 6kg
+    // Solo peso real — sin volumétrico hasta que el cliente lo defina
     var costoAdicional = 0;
-    if (pesoFacturable > 6) {
-        var kgExtra = pesoFacturable - 6;
+    if (peso > 6) {
+        var kgExtra = peso - 6;
         costoAdicional = Math.ceil(kgExtra) * 500;
     }
 
