@@ -3005,3 +3005,15 @@ body.tema-claro .calc-resultado__desglose,
 body.tema-claro .calc-resultado__disclaimer {
     color: #333333;
 }
+
+body.tema-claro .hamburger__line {
+    background-color: #1a1a1a;
+}
+
+body.tema-claro .mobile-menu {
+    background-color: #ffffff;
+}
+
+body.tema-claro .mobile-menu__link {
+    color: #1a1a1a;
+}
