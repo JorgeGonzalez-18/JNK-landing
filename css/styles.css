@@ -554,7 +554,7 @@ ol {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80');
+    background-image: url(/JNK-landing/assets/image/fondohero.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -821,7 +821,7 @@ ol {
    ══════════════════════════════════════ */
 
 .nosotros {
-    padding: var(--space-16);
+    padding: var(--space-16)0;
     background-color: var(--color-navy-alt);
 }
 
@@ -913,11 +913,6 @@ ol {
     margin-bottom: var(--space-8);
 }
 
-/* .nosotros__mv {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3);
-} */
 .mision-vision__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -969,35 +964,27 @@ ol {
 }
 
 .mision-vision .mv__text {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-body);
+    font-size: var(--font-size-base);
+    color: var(--color-white);
     line-height: 1.6;
     justify-content: center;
     align-items: center;
 }
 
 .mv__valores {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: var(--space-3);
-    margin-top: var(--space-8);
+    margin-top: var(--space-6);
     flex-wrap: wrap;
 }
 
-@media (max-width: 480px) {
-    .mision-vision__valores {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .mision-vision__valores {
-        grid-template-columns: 1fr;
-    }
-}
 
 .mision-vision .valor-card {
     display: flex;
@@ -1005,7 +992,7 @@ ol {
     align-items: center;
     justify-content: center;
 
-    width: 120px;
+    width: 160px;
     height: 120px;
     aspect-ratio: 1 / 1;
 
