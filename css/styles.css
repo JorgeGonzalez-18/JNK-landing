@@ -2832,3 +2832,166 @@ a.contacto__data-value:hover {
     }
 
 }
+
+/* ══════════════════════════════════════
+   PANEL DE ACCESIBILIDAD
+   ══════════════════════════════════════ */
+.accesibilidad {
+    position: fixed;
+    bottom: var(--space-6);
+    left: var(--space-6);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+}
+
+.accesibilidad__btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-navy-base);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast);
+}
+
+.accesibilidad__btn:hover {
+    background: var(--color-red);
+}
+
+.accesibilidad__panel {
+    background: var(--color-navy-base);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.acc-panel__opcion {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding: var(--space-1) var(--space-2);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    white-space: nowrap;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.acc-panel__opcion:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tema claro */
+body.tema-claro {
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+
+body.tema-claro .navbar,
+body.tema-claro .mobile-menu {
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.tema-claro .section-title,
+body.tema-claro .navbar__link,
+body.tema-claro .nosotros__text,
+body.tema-claro .mv__text,
+body.tema-claro .destinos__item,
+body.tema-claro .footer__tagline {
+    color: #1a1a1a;
+}
+
+body.tema-claro section {
+    background-color: #f5f5f5;
+}
+
+body.tema-claro .service-card,
+body.tema-claro .mv__item,
+body.tema-claro .valor-card,
+body.tema-claro .sede-card__content,
+body.tema-claro .calculadora__form-wrap,
+body.tema-claro .contacto__form-wrap {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.tema-claro .service-card__title,
+body.tema-claro .service-card__desc,
+body.tema-claro .valor-card__label,
+body.tema-claro .sede-card__title,
+body.tema-claro .sede-card__address,
+body.tema-claro .sede-card__address p {
+    color: #1a1a1a;
+}
+
+
+body.tema-claro .footer,
+body.tema-claro .nosotros,
+body.tema-claro .mision-vision,
+body.tema-claro .cobertura {
+    background-color: #f5f5f5;
+}
+
+body.tema-claro .calculadora,
+body.tema-claro .contacto {
+    background: #f5f5f5 !important;
+}
+
+body.tema-claro .contacto__desc,
+body.tema-claro .contacto__data-label,
+body.tema-claro .contacto__data-value,
+body.tema-claro .contacto-form__label {
+    color: #1a1a1a;
+}
+
+body.tema-claro .contacto-form__input,
+body.tema-claro .contacto-form__textarea {
+    background: #ffffff;
+    color: #1a1a1a;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos blancos de secciones */
+body.tema-claro .calculadora .section-title,
+body.tema-claro .calculadora__desc,
+body.tema-claro .calculadora__feature,
+body.tema-claro .video-section .section-title,
+body.tema-claro .video-section__desc {
+    color: #1a1a1a;
+}
+
+/* Títulos del footer */
+body.tema-claro .footer__col-title,
+body.tema-claro .footer__link,
+body.tema-claro .footer__contact-link,
+body.tema-claro .footer__contact-text {
+    color: #1a1a1a;
+}
+
+body.tema-claro .social__icon,
+body.tema-claro .footer__social-link {
+    color: #1a1a1a;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.tema-claro .btn--outline {
+    color: #1a1a1a;
+    border-color: rgba(0, 0, 0, 0.3);
+}

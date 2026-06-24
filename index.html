@@ -348,7 +348,7 @@
                 </header>
 
                 <div class="mision-vision__grid reveal-stagger">
-                    <div class="mv__item">
+                    <div class="mv__item" role="article" aria-labelledby="titulo-mision">
                         <h3 class="mv__title">
                             <i class="fas fa-bullseye" aria-hidden="true"></i> Misión
                         </h3>
@@ -359,7 +359,7 @@
                         </p>
                     </div>
 
-                    <div class="mv__item">
+                    <div class="mv__item" role="article" aria-labelledby="titulo-mision">
                         <h3 class="mv__title">
                             <i class="fas fa-eye" aria-hidden="true"></i> Visión
                         </h3>
@@ -1201,6 +1201,23 @@
 
         </div><!-- /.footer__container -->
     </footer>
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accesibilidad">
+        <button class="accesibilidad__btn" id="acc-toggle" aria-label="Opciones de accesibilidad">
+            <i class="fas fa-universal-access" aria-hidden="true"></i>
+        </button>
+        <div class="accesibilidad__panel" id="acc-panel" hidden>
+            <button class="acc-panel__opcion" id="acc-tema" aria-label="Cambiar tema">
+                <i class="fas fa-sun" aria-hidden="true"></i> Tema claro
+            </button>
+            <button class="acc-panel__opcion" id="acc-aumentar" aria-label="Aumentar tamaño de letra">
+                A+
+            </button>
+            <button class="acc-panel__opcion" id="acc-disminuir" aria-label="Disminuir tamaño de letra">
+                A-
+            </button>
+        </div>
+    </div>
     <!-- BOTON VOLVER INICIO -->
     <button id="back-to-top" class="back-to-top" aria-label="Volver al inicio de la página" hidden>
         <i class="fas fa-arrow-up" aria-hidden="true"></i>

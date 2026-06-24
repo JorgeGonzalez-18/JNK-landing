@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeBackToTop();
     initializeSmoothScroll();
     initializeMapScroll();
+    initializeAccesibilidad();
+
 });
 // PARA QUE NO AFECTE SCROLL EL MAPA
 function initializeMapScroll() {
@@ -997,4 +999,64 @@ function initializeSmoothScroll() {
             });
         });
     });
+}
+function initializeAccesibilidad() {
+    var toggle = document.getElementById('acc-toggle');
+    var panel = document.getElementById('acc-panel');
+    var btnTema = document.getElementById('acc-tema');
+    var btnAumentar = document.getElementById('acc-aumentar');
+    var btnDisminuir = document.getElementById('acc-disminuir');
+
+    if (!toggle || !panel) return;
+    // Al cargar, aplicar el tema guardado
+    if (localStorage.getItem('tema') === 'claro') {
+        document.body.classList.add('tema-claro');
+        if (btnTema) {
+            btnTema.innerHTML = '<i class="fas fa-moon" aria-hidden="true"></i> Tema oscuro';
+        }
+    }
+    // Abrir/cerrar el panel
+    toggle.addEventListener('click', function () {
+        if (panel.hasAttribute('hidden')) {
+            panel.removeAttribute('hidden');
+        } else {
+            panel.setAttribute('hidden', '');
+        }
+    });
+
+    // Cambiar tema
+    if (btnTema) {
+        btnTema.addEventListener('click', function () {
+            document.body.classList.toggle('tema-claro');
+            var esClaro = document.body.classList.contains('tema-claro');
+
+            // Guardar preferencia
+            localStorage.setItem('tema', esClaro ? 'claro' : 'oscuro');
+
+            btnTema.innerHTML = esClaro
+                ? '<i class="fas fa-moon" aria-hidden="true"></i> Tema oscuro'
+                : '<i class="fas fa-sun" aria-hidden="true"></i> Tema claro';
+        });
+    }
+
+    // Tamaño de letra
+    var tamanoBase = 100;
+
+    if (btnAumentar) {
+        btnAumentar.addEventListener('click', function () {
+            if (tamanoBase < 130) {
+                tamanoBase += 10;
+                document.documentElement.style.fontSize = tamanoBase + '%';
+            }
+        });
+    }
+
+    if (btnDisminuir) {
+        btnDisminuir.addEventListener('click', function () {
+            if (tamanoBase > 80) {
+                tamanoBase -= 10;
+                document.documentElement.style.fontSize = tamanoBase + '%';
+            }
+        });
+    }
 }
